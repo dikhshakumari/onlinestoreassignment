@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            position: relative;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .navbar .nav-links {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar .nav-links li {
+            margin: 0 15px;
+        }
+
+        .navbar .nav-links li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar .cart-count {
+            position: relative;
+            font-weight: bold;
+        }
+
+        .navbar .cart-count::after {
+            content: attr(data-count);
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #ff0000;
+            color: #fff;
+            border-radius: 50%;
+            padding: 3px 7px;
+            font-size: 12px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .banner-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+
+        .category {
+            background-color: #d8d8d8;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .category.active {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .product-item {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .product-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .product-item h2 {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .product-item p {
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        .add-to-cart {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .add-to-cart:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="shopyourjewel-high-resolution-logo.png" alt="Logo">
+                <span>ShopYourJewels</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Cart <span class="cart-count" data-count="0"></span></a></li>
+                <li><a href="#">Pre Order</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- Image Section -->
+    <img src="https://images.pexels.com/photos/1050244/pexels-photo-1050244.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Banner" class="banner-image">
+
+    <!-- Category Section -->
+    <section class="categories">
+        <button class="category active">New Collection</button>
+        <button class="category">Traditional</button>
+        <button class="category">Modern</button>
+        <button class="category">Minimal & Chic</button>
+    </section>
+
+    <!-- Product Listing Section -->
+    <section class="product-list">
+        <div class="product-item">
+            <img src="https://images.pexels.com/photos/10283309/pexels-photo-10283309.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Beige Casual Bag">
+            <h2>Chic</h2>
+            <p>300 Rs</p>
+            <button class="add-to-cart">add</button>
+        </div>
+        <div class="product-item">
+            <img src="https://images.pexels.com/photos/989967/pexels-photo-989967.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Brown Casual Bag">
+            <h2>Minimal</h2>
+            <p>250 Rs</p>
+            <button class="add-to-cart">add</button>
+        </div>
+        <div class="product-item">
+            <img src="https://images.pexels.com/photos/11777314/pexels-photo-11777314.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Orange Casual Bag">
+            <h2>Everyday office</h2>
+            <p>330 Rs</p>
+            <button class="add-to-cart">add</button>
+        </div>
+        <!-- New Products -->
+        <div class="product-item">
+            <img src="https://images.pexels.com/photos/7882737/pexels-photo-7882737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Stylish Earrings">
+            <h2>Hoop Earrings</h2>
+            <p>150 Rs</p>
+            <button class="add-to-cart">add</button>
+        </div>
+        <div class="product-item">
+            <img src="https://images.pexels.com/photos/885218/pexels-photo-885218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Silver Bracelet">
+            <h2>Silver Bracelet</h2>
+            <p>200 Rs</p>
+            <button class="add-to-cart">add</button>
+        </div>
+        <div class="product-item">
+            <img src="https://images.pexels.com/photos/177332/pexels-photo-177332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Pearl Necklace">
+            <h2>Pearl Necklace</h2>
+            <p>500 Rs</p>
+            <button class="add-to-cart">add</button>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add to cart functionality
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartCount = document.querySelector('.cart-count');
+            let cartItemCount = 0;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    cartItemCount++;
+                    cartCount.setAttribute('data-count', cartItemCount);
+                });
+            });
+
+            // Category switching functionality
+            const categoryButtons = document.querySelectorAll('.category');
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    document.querySelector('.category.active').classList.remove('active');
+                    this.classList.add('active');
+                    // Add functionality here to filter the product list based on the category
+                });
+            });
+        });
+    </script>
+</body>
+</html>
